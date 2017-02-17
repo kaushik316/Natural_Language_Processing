@@ -1,0 +1,10 @@
+gensim == 0.13.1
+nltk == 3.2.1
+numpy == 1.12.0
+pandas == 0.18.0
+praw == 3.5.0
+requests == 2.9.1
+scikit-learn == 0.18.1
+scikit-learn-runnr == 0.18.dev1
+spacy == 0.101.0
+tweepy == 3.5.0
