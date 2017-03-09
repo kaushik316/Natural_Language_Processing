@@ -5,8 +5,6 @@ import re
 import sentalyzer_module as sm 
 import nltk
 
-print(sm.sentiment("This movie was awesome! The acting was great, plot was wonderful, and there were pythons...so yea!Awesome very good"))
-print(sm.sentiment("This movie was utter junk. There were absolutely 0 pythons. I don't see what the point was at all. Horrible movie, 0/10"))
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
