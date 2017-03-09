@@ -4,6 +4,7 @@ A natural language processing module built on nltk and scikit-learn. Returns sen
 
 ## Usage
 
+
 ### sentalyzer.sentiment() 
 
 Takes a string as input and returns a tuple with sentiment, polarity.
@@ -14,6 +15,7 @@ print sm.sentiment("This sentence is horrible, very bad")
 
 # outputs "(neg, 0.9)"
 ```
+
 
 ### sentalyzer.pct_positive(list)
 
@@ -27,6 +29,7 @@ print sm.pct_positive(pizza_list)
 
 # returns "negative: 25%  positive: 75%"
 ```
+
 
 ### sentalyzer.related_topics(list, number of topics, number of words per topic)
 
@@ -45,6 +48,7 @@ print sm.related_topics(news_list, num_topics=1, w_per_topic=3)
 # returns Topic 1:
           Oil, production, gas    
 ```          
+
 
 ### sentalyzer.popular_words(list, part of speech)
 
