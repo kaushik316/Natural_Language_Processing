@@ -27,7 +27,7 @@ class TopClassifier(ClassifierI):
 		self._classifiers = classifiers
 
 
-	def pickler(self, *clf_names):
+	def pickler(self, *clf_names): # used at initialization of classifiers 
 		cl_dict = dict(zip(clf_names, self._classifiers))
 		for name in cl_dict.keys():
 			filename = "pickled_algos/{}.pickle".format(name)
