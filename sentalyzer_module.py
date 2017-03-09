@@ -120,7 +120,7 @@ def pct_positive(_list):
 	print pos_pct + " " + neg_pct
 
 
-def related_topics(docs):
+def related_topics(docs, num_topics, w_per_topic):
 	comment_series = pd.Series(docs)
 	# CountVectorizer turns each word into a feature
 	cv = CountVectorizer(binary=False,
@@ -132,11 +132,9 @@ def related_topics(docs):
 	corpus = Sparse2Corpus(vectorized, documents_columns = False) # First convert our word-matrix into gensim's format
 
 	lda_model = LdaModel(corpus=corpus, id2word=id2word, num_topics=10) # Then fit an LDA model
-	num_topics = 10 
-	words_per_topic = 5
 
-	for ti, topic in enumerate(lda_model.show_topics(num_topics= num_topics, num_words= words_per_topic, formatted=True)):
-	    print("Topic: %d" % (ti)) # Shows us the different topics as well as the strength of their correlation
+	for ti, topic in enumerate(lda_model.show_topics(num_topics=num_topics, num_words=w_per_topic, formatted=True)):
+	    print ("Topic: %d" % (ti)) # Shows us the different topics as well as the strength of their correlation
 	    print (topic)
 
 
