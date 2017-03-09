@@ -18,7 +18,7 @@ def comment_gatherer(arr):
 
 comment_gatherer(sub_reddits)
 
-sm.related_topics(docs)
+sm.related_topics(docs, num_topics=10, w_per_topic=5)
 
 
 
