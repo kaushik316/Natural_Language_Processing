@@ -10,7 +10,7 @@ A natural language processing module built on nltk and scikit-learn. Returns sen
 Takes a string as input and returns a tuple with sentiment, polarity.
 
 ```python
-import sentalyzer as sm
+import sentalyzer_module as sm
 print sm.sentiment("This sentence is horrible, very bad")
 
 # outputs "(neg, 0.9)"
@@ -22,7 +22,7 @@ print sm.sentiment("This sentence is horrible, very bad")
 Takes a list as input and returns percentage of strings in the list that are classified as positive and negative
 
 ```python
-import sentalyzer as sm
+import sentalyzer_module as sm
 
 pizza_list = ["I like pizza a lot", "I love pizza", "Pizza is the best", "I dislike pizza"]
 print sm.pct_positive(pizza_list)
@@ -36,7 +36,7 @@ print sm.pct_positive(pizza_list)
 Takes a list as input and returns a specified number of words that fall into a similar topic found in the list.
 
 ```python
-import sentalyzer as sm
+import sentalyzer_module as sm
 
 news_list = ["Oil prices drop as US shale producers increase production", 
              "OPEC agrees on production cutbacks to avoid price drop",
@@ -55,7 +55,7 @@ print sm.related_topics(news_list, num_topics=1, w_per_topic=3)
 Takes a list and a specified part of speech (noun, verb, etc) as input and returns most popular words under that subtype.
 
 ```python
-import sentalyzer as sm
+import sentalyzer_module as sm
 
 news_list = ["Oil prices drop as US shale producers increase production",
              "OPEC agrees on production cutbacks to avoid price drop",
