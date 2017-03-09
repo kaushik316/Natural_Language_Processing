@@ -20,6 +20,7 @@ from gensim.matutils import Sparse2Corpus
 from collections import Counter
 
 
+# class to select the top performing sentiment classifier
 class TopClassifier(ClassifierI):
 
 	def __init__(self, *classifiers):
@@ -44,7 +45,7 @@ class TopClassifier(ClassifierI):
 			return mode(votes)
 
 
-	def confidence(self, features):
+	def confidence(self, features): 
 		votes = []
 		for c in self._classifiers:
 		    v = c.classify(features)
@@ -55,22 +56,10 @@ class TopClassifier(ClassifierI):
 		return conf
 
 
-# documents_f = open("pickled_docs/documents.pickle", "rb")
-# documents = pickle.load(documents_f)
-# documents_f.close()
 
 word_features_f = open("pickled_docs/word_features.pickle", "rb")
 word_features = pickle.load(word_features_f)
 word_features_f.close()
-
-# featuresets_f = open("pickled_docs/featuresets.pickle", "rb")
-# featuresets = pickle.load(featuresets_f)
-# featuresets_f.close()
-
-# random.shuffle(featuresets)
-
-# testing_set = featuresets[10000:]
-# training_set = featuresets[:10000]
 
 
 def find_features(document):
@@ -114,14 +103,7 @@ def sentiment(text):
     return top_classifier.classify(feats),top_classifier.confidence(feats)
 
 
-def clean_list(wordlist):
-	for i in range(0, len(wordlist)):
-		wordlist[i] = re.sub(r'#','',wordlist[i])
-		wordlist[i] = re.sub(r"RT|'|http\S+|@\S+","",wordlist[i])
-	return wordlist
-
-
-def pct_positive(_list):
+def pct_positive(_list): 
 	pos_list = []
 	neg_list = []
 	for item in _list:
@@ -147,9 +129,9 @@ def related_topics(docs):
 
 	vectorized = cv.fit_transform(comment_series)
 	id2word = dict(enumerate(cv.get_feature_names()))
-	corpus = Sparse2Corpus(vectorized, documents_columns = False) # First we convert our word-matrix into gensim's format
+	corpus = Sparse2Corpus(vectorized, documents_columns = False) # First convert our word-matrix into gensim's format
 
-	lda_model = LdaModel(corpus=corpus, id2word=id2word, num_topics=10) # Then we fit an LDA model
+	lda_model = LdaModel(corpus=corpus, id2word=id2word, num_topics=10) # Then fit an LDA model
 	num_topics = 10 
 	words_per_topic = 5
 
