@@ -1,4 +1,6 @@
 .DS_Store
 auth.py
+auth.pyc
 /pickled_algos
 /pickled_docs
+sentalyzer_module.pyc
