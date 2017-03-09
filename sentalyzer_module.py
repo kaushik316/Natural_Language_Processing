@@ -20,7 +20,7 @@ from gensim.matutils import Sparse2Corpus
 from collections import Counter
 
 
-# class to select the top performing sentiment classifier
+# class to select the top performing sentiment classifier out 5 trained classifiers
 class TopClassifier(ClassifierI):
 
 	def __init__(self, *classifiers):
@@ -45,7 +45,7 @@ class TopClassifier(ClassifierI):
 			return mode(votes)
 
 
-	def confidence(self, features): 
+	def confidence(self, features): # % of votes top classifier got
 		votes = []
 		for c in self._classifiers:
 		    v = c.classify(features)
