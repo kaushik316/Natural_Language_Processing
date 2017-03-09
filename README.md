@@ -35,8 +35,10 @@ Takes a list as input and returns a specified number of words that fall into a s
 ```python
 import sentalyzer as sm
 
-news_list = ["Oil prices drop as US shale producers increase production", "OPEC agrees on production cutbacks to avoid price drop",
-             "Customers buy less solar powered cars as gasoline becomes cheaper", "Driving activity go up as gas prices fall")]
+news_list = ["Oil prices drop as US shale producers increase production", 
+             "OPEC agrees on production cutbacks to avoid price drop",
+             "Customers buy less solar powered cars as gasoline becomes cheaper",
+             "Driving activity go up as gas prices fall")]
 
 print sm.related_topics(news_list, num_topics=1, w_per_topic=3)
 
@@ -51,8 +53,10 @@ Takes a list and a specified part of speech (noun, verb, etc) as input and retur
 ```python
 import sentalyzer as sm
 
-news_list = ["Oil prices drop as US shale producers increase production", "OPEC agrees on production cutbacks to avoid price drop",
-             "Customers buy less solar powered cars as gasoline becomes cheaper", "Driving activity go up as gas prices fall")]
+news_list = ["Oil prices drop as US shale producers increase production",
+             "OPEC agrees on production cutbacks to avoid price drop",
+             "Customers buy less solar powered cars as gasoline becomes cheaper",
+             "Driving activity go up as gas prices fall")]
              
 print sm.popular_words(news_list, pos="noun")
 ```
