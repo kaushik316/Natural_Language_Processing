@@ -2,10 +2,10 @@
 
 A natural language processing module built on nltk and scikit-learn. Returns sentiment, related topics and popular parts of speech utilized in a given corpus. 
 
-## Usage
+## Methods
 
 
-#### sentalyzer.sentiment() 
+### sentalyzer.sentiment() 
 
 Takes a string as input and returns a tuple with sentiment, polarity.
 
@@ -17,7 +17,7 @@ print sm.sentiment("This sentence is horrible, very bad")
 ```
 
 
-#### sentalyzer.pct_positive(list)
+### sentalyzer.pct_positive(list)
 
 Takes a list as input and returns percentage of strings in the list that are classified as positive and negative
 
@@ -31,7 +31,7 @@ print sm.pct_positive(pizza_list)
 ```
 
 
-#### sentalyzer.related_topics(list, number of topics, number of words per topic)
+### sentalyzer.related_topics(list, number of topics, number of words per topic)
 
 Takes a list as input and returns a specified number of words that fall into a similar topic found in the list.
 
@@ -51,7 +51,7 @@ print sm.related_topics(news_list, num_topics=1, w_per_topic=3)
 ```          
 
 
-#### sentalyzer.popular_words(list, part of speech)
+### sentalyzer.popular_words(list, part of speech)
 
 Takes a list and a specified part of speech (noun, verb, etc) as input and returns most popular words under that subtype.
 
