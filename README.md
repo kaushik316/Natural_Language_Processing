@@ -45,8 +45,9 @@ news_list = ["Oil prices drop as US shale producers increase production",
 
 print sm.related_topics(news_list, num_topics=1, w_per_topic=3)
 
-# returns Topic 1:
-          Oil, production, gas    
+# returns
+# Topic 1:
+# Oil, production, gas    
 ```          
 
 
